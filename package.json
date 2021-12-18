@@ -14,7 +14,7 @@
     "start": "npm run serve",
     "test": "npm-run-all test:lint test:unit",
     "linkinator": "wait-on http://localhost:8080/en/ && linkinator http://localhost:8080/en/ --recurse --skip \"^(?!http://localhost)\" --verbosity error",
-    "test:lint": "npm-run-all --parallel --aggregate-output test:lint:*",
+    "test:lint": "npm-run-all --parallel --aggregate-output --continue-on-error test:lint:*",
     "test:lint:js": "eslint .",
     "test:lint:md": "remark -qf .",
     "test:lint:stylelint": "stylelint \"layouts/css/**/*.{css,scss}\" --report-needless-disables",
